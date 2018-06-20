@@ -1,0 +1,10 @@
+name: $(date:yyyyMMdd)$(rev:.r)
+queue:
+  name: Hosted VS2017
+  condition: succeeded()
+
+steps:
+- task: CmdLine@1
+  displayName: Run build-and-test.cmd
+  inputs:
+    filename: 'build-and-test.cmd'

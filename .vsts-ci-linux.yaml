@@ -1,0 +1,10 @@
+name: $(date:yyyyMMdd)$(rev:.r)
+queue:
+  name: Hosted Linux Preview
+  condition: succeeded()
+
+steps:
+- task: CmdLine@1
+  displayName: Run build-and-test.sh
+  inputs:
+    filename: './build-and-test.sh'
